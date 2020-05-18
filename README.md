@@ -6,10 +6,12 @@ from IPython.display import HTML
 import numpy as np
 plt.rcParams['font.sans-serif'] = ['Microsoft JhengHei']
 
+
 df = pd.read_csv('https://quality.data.gov.tw/dq_download_csv.php?nid=87672&md5_url=a7cf7ecff5466dd8bb4eb38ae65b9e38')
 df.head(100)
 df.dtypes # 發現rain fall有遺失值且被當作文字
 df['rainfall'].unique()
+
 
 import numpy as np
 for rainfall in df:
@@ -24,6 +26,7 @@ df.dtypes
 df[df.observeDate =='2017-08']
 
 df['observatory'].unique()
+
 
 basic = df[df['observeDate']=='2017-08'].sort_values('rainfall').tail(10)
 fig, ax = plt.subplots(figsize=(15, 8))
